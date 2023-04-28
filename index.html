@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Kalkulator javascript</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function calc() {
+            var n1 = parseFloat(document.getElementById('n1').value);
+            var n2 = parseFloat(document.getElementById('n2').value);
+
+            var oper = document.getElementById('operators').value;
+
+            if (oper === '+') {
+                document.getElementById('result').value = n1 + n2;
+            }
+            if (oper === '-') {
+                document.getElementById('result').value = n1 - n2;
+            }
+            if (oper === '/') {
+                document.getElementById('result').value = n1 / n2;
+            }
+            if (oper === '*') {
+                document.getElementById('result').value = n1 * n2;
+            }
+            if (oper === '//') {
+                document.getElementById('result').value = parseInt(n1 / n2);
+            }
+
+            if (oper === '%') {
+                document.getElementById('result').value = n1 % n2;
+            }
+
+            if (oper === '**') {
+                document.getElementById('result').value = n1 ** n2;
+            }
+        }
+    </script>
+    <style>
+        h1 {
+            font-family: Arial, Helvetica, sans-serif;
+            color: blue;
+            text-shadow: 1px 1px blue;
+        }
+        body {
+            background-color: bisque;
+        }
+        label {
+            font-size: large;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-shadow: 1px 1px black;
+            padding-right: 20px;
+        }
+        #a {
+            border-style: solid;
+            border-width: 2px;
+            width: 20%;
+            padding: 20px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kalkulator</h1>
+    <hr>
+    <div id="a">
+    <label for="n1">Podaj pierwszą liczbę:</label>
+    <input type="text" value=0 dir="rtl" id="n1" /><br /><br />
+    <label for="n2">Podaj drugą liczbę:</label>
+    <input type="text" value=0 dir="rtl" id="n2" /><br />
+    </div>
+    </br>
+    <select id="operators">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="/">/</option>
+        <option value="*">*</option>
+        <option value="//">//</option>
+        <option value="%">%</option>
+        <option value="**">**</option>
+    </select>
+    <button onclick="calc();">=</button>
+    <input type="text" value=0 dir="rtl" id="result" />
+</body>
+</html>
